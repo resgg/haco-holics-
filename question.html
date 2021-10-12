@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQ</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Hind:300,400&display=swap');
+       
+* {
+  box-sizing: border-box;
+}
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Hind', sans-serif;
+  background: #fff;
+  color: #4d5974;
+  display: flex;
+  min-height: 100vh;
+}
+
+.container {
+  margin:0 auto;
+  padding: 4rem;
+  width: 48rem;
+  
+}
+p{
+    padding-top:-5px;
+    margin-bottom:200px;
+}
+.accordion .accordion-item {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.accordion .accordion-item button[aria-expanded='true'] {
+  border-bottom: 1px solid #03b5d2;
+}
+
+.accordion button {
+  position: relative;
+  display: block;
+  text-align: left;
+  width: 100%;
+  padding: 1em 0;
+  color: #356480;;
+  font-size: 1.15rem;
+  font-weight: 400;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+.accordion button:hover,
+.accordion button:focus {
+  cursor: pointer;
+  color: #356480;
+}
+h2{
+    margin-top: 30px;
+}
+.accordion button:hover::after,
+.accordion button:focus::after {
+  cursor: pointer;
+  color: #356480;
+  border: 1px solid #356480;
+}
+
+.accordion button .accordion-title {
+  padding: 1em 1.5em 1em 0;
+}
+
+.accordion button .icon {
+  display: inline-block;
+  position: absolute;
+  top: 18px;
+  right: 0;
+  width: 22px;
+  height: 22px;
+  border: 1px solid;
+  border-radius: 22px;
+}
+
+.accordion button .icon::before {
+  display: block;
+  position: absolute;
+  content: '';
+  top: 9px;
+  left: 5px;
+  width: 10px;
+  height: 2px;
+  background: currentColor;
+}
+.accordion button .icon::after {
+  display: block;
+  position: absolute;
+  content: '';
+  top: 5px;
+  left: 9px;
+  width: 2px;
+  height: 10px;
+  background: currentColor;
+}
+
+.accordion button[aria-expanded='true'] {
+  color:#356480;
+}
+.accordion button[aria-expanded='true'] .icon::after {
+  width: 0;
+}
+.accordion button[aria-expanded='true'] + .accordion-content {
+  opacity: 1;
+  max-height: 9em;
+  transition: all 200ms linear;
+  will-change: opacity, max-height;
+}
+.accordion .accordion-content {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  margin-bottom:30px;
+  transition: opacity 200ms linear, max-height 200ms linear;
+  will-change: opacity, max-height;
+}
+.accordion .accordion-content p {
+  font-size: 1rem;
+  font-weight: 100;
+  margin: 1em 0;
+}
+
+
+    </style>
+  </head>
+  <body>
+    <div>
+        <div class="container">
+
+            <div class="header">
+                <a href="#" class="logo">Company Name</a>
+                <div class="mobile-menu" onclick="onMenuToggle('open')">
+                    <span class="menu-bars"></span>
+                </div>
+        
+                <div class="nav-container">
+                    <span class="menu-close" onclick="onMenuToggle('close')"></span>
+                    <nav class="nav">
+                        <li class="nav__link"><a href="#">About</a></li>
+                        <li class="nav__link"><a href="#">Our Products</a></li>
+                        <li class="nav__link"><a href="#">Contact</a></li>
+                        <li class="nav__link"><a href="#">Purchase</a></li>
+                    </nav>
+                </div>
+            </div>
+        </div>
+</div>
+    <div><p></p></div>
+    <div class="container">
+        <h2>Frequently Asked Questions</h2>
+        <div class="accordion">
+          <div class="accordion-item">
+            <button id="accordion-button-1" aria-expanded="false">
+              <span class="accordion-title">Why Join?</span>
+              <span class="icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion-content">
+              <p>
+                It is to be IEEE JEC SBs first connected hackathon! An exceptional opportunity to come together with other talents in a challenge of international scope, sharing ideas and experimenting with the latest technologies and innovations.
+              </p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button id="accordion-button-2" aria-expanded="false">
+              <span class="accordion-title">What are the evaluation criterias for the selection of the winning team or winner? </span>
+              <span class="icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion-content">
+              <p>
+                The jury will analyze and evaluate all works submitted by the team according to the following four evaluation criteria: <br>
+ 1. Concept 
+ 2. Design 
+ 3. Development 
+ 4. Presentation 
+
+              </p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button id="accordion-button-3" aria-expanded="false">
+              <span class="accordion-title">What is the theme for the hackathon?</span>
+              <span class="icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion-content">
+              <p>
+                1. Cyber security. <br>
+                2. ML in the Automation sector. <br>
+                3. Agriculture and rural development using IoT. <br> 
+                4. Environmental technology.
+
+              </p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button id="accordion-button-4" aria-expanded="false">
+              <span class="accordion-title">Who judges the winners? </span>
+              <span class="icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion-content">
+              <p>The winning team will be decided by a jury made up of experts of Machine Learning, IoT, Cyber Security.
+              </p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button id="accordion-button-5" aria-expanded="false">
+              <span class="accordion-title">How the Hackthon will conduct in this pandemic situation?</span>
+              <span class="icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion-content">
+              <p>
+                This is a virtual hackathon in which the participants are asked to submit their abstract, presentation and model through virtually. 
+              </p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button id="accordion-button-5" aria-expanded="false">
+              <span class="accordion-title">What is the language of the contest?</span>
+              <span class="icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion-content">
+              <p>
+                The Hackathon and its evaluation processes will be in English. 
+              </p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button id="accordion-button-5" aria-expanded="false">
+              <span class="accordion-title">How will the participants be evaluated? 
+            </span>
+              <span class="icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion-content">
+              <p>
+                The final decisions of the judges are to be based on Concept, Design, Development, and Presentation. The panel will assign a score to each parameter, which will then determine the ranking of each participating team. 
+Each team will be invited to compete against others in order to determine the top three teams overall.At the end of Final Pitching in the hackathon the winners will be the three teams with the highest total scores.
+
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    <script src="script.js"></script>
+    <script src="script2.js"></script>
+  </body>
+</html>
